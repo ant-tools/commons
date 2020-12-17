@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="commons" default="build">
+	<property name="NAME" value="js-dep" />
+	<property name="VERSION" value="1.0.0" />
+
+	<property name="BIN" value="bin" />
+	<property name="BUILD" value="../build" />
+	<property name="JAR" value="${BUILD}/${NAME}-${VERSION}.jar" />
+
+	<target name="build">
+		<jar destfile="${JAR}">
+			<zipfileset dir="${BIN}" includes="**/commons/*,**/ast/,**/dep/,**/util/" />
+		</jar>
+	</target>
+</project>
