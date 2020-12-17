@@ -298,6 +298,31 @@ public final class Strings
     return string.substring(string.lastIndexOf(separator) + 1);
   }
 
+
+  public static String toDashCase(String memberName)
+  {
+    if(memberName == null) {
+      return null;
+    }
+    final int length = memberName.length();
+    StringBuilder builder = new StringBuilder(length);
+
+    for(int i = 0; i < length; i++) {
+      char c = memberName.charAt(i);
+      if(Character.isLowerCase(c)) {
+        builder.append(c);
+        continue;
+      }
+
+      c = Character.toLowerCase(c);
+      if(i > 0) {
+        builder.append('-');
+      }
+      builder.append(c);
+    }
+    return builder.toString();
+  }
+
   /**
    * Convert dash separated words to Java class member name. Note that first character of returned member name is lower
    * case, e.g. <code>this-is-a-string</code> is converted to <code>thisIsAString</code>.

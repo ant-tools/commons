@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="commons" default="build">
-	<property name="NAME" value="js-dep" />
+	<property name="NAME" value="tools-commons" />
 	<property name="VERSION" value="1.0.0" />
 
 	<property name="BIN" value="bin" />
@@ -9,7 +9,11 @@
 
 	<target name="build">
 		<jar destfile="${JAR}">
-			<zipfileset dir="${BIN}" includes="**/commons/*,**/ast/,**/dep/,**/util/" />
+			<zipfileset dir="${BIN}" />
 		</jar>
+	</target>
+
+	<target name="clean">
+		<delete file="${JAR}" verbose="yes" failonerror="no" />
 	</target>
 </project>

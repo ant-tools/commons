@@ -235,7 +235,7 @@ public final class Files
    * @throws IOException if reading or writing fails.
    * @throws IllegalArgumentException if input or output stream is ZIP stream.
    */
-  private static void copy(InputStream inputStream, OutputStream outputStream) throws IOException
+  public static void copy(InputStream inputStream, OutputStream outputStream) throws IOException
   {
     if(!(inputStream instanceof BufferedInputStream)) {
       inputStream = new BufferedInputStream(inputStream);
